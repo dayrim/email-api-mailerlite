@@ -30,6 +30,26 @@ app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  const emailPandaArt = `
+    <pre>
+        ʕ•ᴥ•ʔ
+       <b>Email Panda</b>
+    </pre>
+    `;
+
+  res.send(`
+      <html>
+      <head><title>Email Panda</title></head>
+      <body>
+        <h1>Welcome to Email Panda Service</h1>
+        ${emailPandaArt}
+        <p>Use our service to send your emails securely and efficiently!</p>
+      </body>
+      </html>
+    `);
+});
+
 app.post("/send-email", async (req, res) => {
   const { name, email, message } = req.body;
 
