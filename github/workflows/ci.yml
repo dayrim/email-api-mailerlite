@@ -47,4 +47,4 @@ jobs:
             docker pull dayrim/email-api-mailerlite:latest
             docker stop email-api-mailerlite || true
             docker rm email-api-mailerlite || true
-            docker run -d --name email-api-mailerlite -p ${{ secrets.APP_PORT }}:3000 -e MAILERLITE_API_KEY=${{ secrets.MAILERLITE_API_KEY }} dayrim/email-api-mailerlite:latest
+            docker run -d --name email-api-mailerlite -p ${{ secrets.PORT }}:3000 -e MAILERLITE_API_KEY=${{ secrets.MAILERLITE_API_KEY }} dayrim/email-api-mailerlite:latest
