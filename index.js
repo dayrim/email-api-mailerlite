@@ -13,7 +13,7 @@ const corsOptions = {
     if (!origin) return callback(null, true); // Allow requests with no origin (like mobile apps or curl requests)
     const allowedOrigins = [
       /^https?:\/\/(.*\.)?connection-tribe\.net$/,
-      /^http:\/\/localhost:3000$/,
+      /^http:\/\/localhost:[0-9]+$/,
     ];
     const originIsAllowed = allowedOrigins.some((regex) => regex.test(origin));
 
